@@ -1,24 +1,21 @@
 import time
 
-# 1. The Wrapper Factory
-def my_logger(func):  # Changed from func_to_decorate
-    def wrapper():
+def my_logger(func_to_decorate):
+    def wrapper(*args, **kwargs):
         print("LOG: Starting process...")
-        func()  # Updated reference
+        func_to_decorate(*args, **kwargs)
         print("LOG: Process finished.")
     return wrapper
 
+#APPLY THE DECORATOR HERE
+@my_logger
 def get_user_data():
     print("Fetching data from database...")
     time.sleep(1.5)
-    print("Data Fetched!")
+    print("Data fetched!")
 
 if __name__ == "__main__":
-    print("--- APP STARTED ---")
-    
-    # 2. The Manual Decoration
-    # We wrap the function manually
-    secure_function = my_logger(get_user_data)
+    print("--- APP STARTS ---")
 
-    # 3. Run the NEW function
-    secure_function()
+
+    get_user_data()
