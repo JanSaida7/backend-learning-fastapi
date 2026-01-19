@@ -33,6 +33,20 @@ def heavy_calculation(n: int) -> int:
     time.sleep(1)
     return sum(range(n))
 
+
+def require_admin(func: Callable[..., Any]) -> Callable[..., Any]:
+    def wrapper(user_role: str, *args: Any, **kwargs: Any) -> Any:
+        if user_role != "admin":
+            print("⛔ ACCESS DENIED: Admins only.")
+            return None # Stop! Don't run the function.
+        print("✅ Access Granted.")
+        return func(user_role, *args, **kwargs)
+    return wrapper
+
+@require_admin
+def delete_database(user_role: str) -> None:
+    print("💥 DATABASE DELETED!")
+
 if __name__ == "__main__":
     print("--- APP STARTS ---")
 
@@ -42,3 +56,9 @@ if __name__ == "__main__":
     print("\n--- TIMER TEST ---")
     total = heavy_calculation(1000000)
     print(f"Result: {total}")
+
+
+
+    print("\n--- SECURITY TEST ---")
+    delete_database("guest") # Should fail
+    delete_database("admin") # Should work
