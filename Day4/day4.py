@@ -1,9 +1,10 @@
 import time
+from typing import Callable
 
-def my_logger(func_to_decorate):
-    def wrapper(*args, **kwargs):
+def my_logger(func_to_decorate: Callable[[], None]) -> Callable[[], None]:
+    def wrapper():
         print("LOG: Starting process...")
-        func_to_decorate(*args, **kwargs)
+        func_to_decorate()
         print("LOG: Process finished.")
     return wrapper
 
