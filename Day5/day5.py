@@ -1,6 +1,6 @@
 import requests
 
-def get_todo_list():
+def get_todo_list() -> None:
     url = "https://jsonplaceholder.typicode.com/todos/1"
 
     #1.Make the Request
@@ -17,13 +17,27 @@ def get_todo_list():
         data = response.json()
 
         # 2. Now we can access keys!
-        print(f"Task: {data}['title]")
+        print(f"Task: {data['title']}")
         print(f"Completed: {data['completed']}")
     else:
         print("Failed to fetch data")
 
+def get_user_posts(user_id: int) -> None:
+    url = "https://jsonplaceholder.typicode.com/posts"
 
-def create_post():
+    # We pass parameters as a dictionary
+    # This turns the URL into: .../posts?userId=1
+    params = {"user_id": user_id}
+
+    response = requests.get(url, params=params)
+
+    posts = response.json() # This returns a LIST of dictionaries
+    print(f"\n--- Posts by User {user_id} ---")
+    for post in posts[:3]: # Just print the first 3
+        print(f"- {post['title']}")
+
+
+def create_post() -> None:
     url = "https://jsonplaceholder.typicode.com/posts"
 
     # The data we want to send
@@ -44,5 +58,6 @@ def create_post():
 if __name__ == "__main__":
     print("--- API CLIENT STARTED ---")
     get_todo_list()
+    get_user_posts(1)
 
     create_post()
