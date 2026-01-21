@@ -1,5 +1,4 @@
 import requests
-import json
 
 def get_todo_list():
     url = "https://jsonplaceholder.typicode.com/todos/1"
