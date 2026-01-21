@@ -1,6 +1,6 @@
 #Importing the math functions from math_utils module
 
-from math_utils import calculate_circle_area, add_numbers
+from Day2.math_utils import calculate_circle_area, add_numbers
 
 def run_app():  
     print("--- APP_STARTED ---", flush=True)

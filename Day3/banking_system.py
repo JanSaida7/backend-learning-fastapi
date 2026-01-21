@@ -37,8 +37,8 @@ class SavingsAccount(BankAccount):
         super().__init__(owner, balance)
         self.interest_rate: float = interest_rate
 
-    def apply_interest(self) -> None:
-        interest: float = self.balance * self.interest_rate
-        self.deposit(interest)  # Reuse the parent's deposit logic!
-        self._log_transaction(f"Interest applied (${interest})")
-        print(f"Interest applied: ${interest}")   
+    def apply_interest(self):
+        interest = self.balance * self.interest_rate
+        self.deposit(interest)
+        self._log_transaction(f"Interest appiled (${interest})")
+        print(f"Interest appiled: ${interest}")
