@@ -20,3 +20,14 @@ VALUES ('alice', 'alice@example.com', true);
 
 INSERT INTO users (username, email, is_active) 
 VALUES ('bob', 'bob@example.com', false);
+
+-- 3. Read Data (Select)
+
+-- Get everything
+SELECT * FROM users;
+
+-- Get only specific columns
+SELECT username, email FROM users;
+
+-- Filter data (Where clause)
+SELECT * FROM users WHERE is_active = true;
