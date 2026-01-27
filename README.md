@@ -54,7 +54,19 @@ Explored Python's "Magic" syntax to understand how frameworks like FastAPI wrap 
 - Refactored code to use the **`@syntax`** (Syntactic Sugar).
 - Built practical utilities: an **Execution Timer** for performance and an **Auth Check** for simulated security.
 
----
+### Day 5: JSON & APIs
+Learned how to communicate with external servers using the **Requests** library.
+- Fetched data using **GET** requests and parsed **JSON** responses.
+- Used **Query Parameters** to filter data server-side.
+- Sent data to a server using **POST** requests.
+
+### Day 6: Database Setup & Basic SQL
+Transitioned from storing data in memory to persistent storage using **PostgreSQL**.
+- Created a `users` table with auto-incrementing IDs (`SERIAL`) and default timestamps.
+- Practiced **CRUD** operations using raw SQL:
+  - **Create:** `INSERT INTO` to add new users.
+  - **Read:** `SELECT * FROM` to view data.
+  - **Update/Delete:** Modifying records based on conditions (`WHERE`).
 
 ## 🏃 How to Run
 1. Clone the repo:
