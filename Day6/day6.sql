@@ -28,6 +28,18 @@ SELECT * FROM users;
 
 -- Get only specific columns
 SELECT username, email FROM users;
+add .
 
 -- Filter data (Where clause)
 SELECT * FROM users WHERE is_active = true;
+
+-- 4. Update Data
+-- Bob paid his subscription, let's activate him.
+UPDATE users 
+SET is_active = true 
+WHERE username = 'bob';
+
+-- 5. Delete Data
+-- Charlie cancelled his account.
+DELETE FROM users 
+WHERE username = 'charlie';
