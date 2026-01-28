@@ -23,3 +23,13 @@ VALUES ('FastAPI is cool', 'I am learning backend dev.', 1);
 
 INSERT INTO posts (title, content, user_id) 
 VALUES ('SQL is hard', 'But I am getting better at it.', 2);
+
+-- 3. INNER JOIN
+-- Combines rows where there is a match in BOTH tables.
+
+SELECT 
+    users.username,
+    posts.title,
+    posts.created_at
+FROM users
+INNER JOIN posts ON user_id = posts.user_id
