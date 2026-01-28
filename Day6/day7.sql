@@ -33,3 +33,12 @@ SELECT
     posts.created_at
 FROM users
 INNER JOIN posts ON user_id = posts.user_id
+
+-- 4. LEFT JOIN
+-- Shows ALL users, even if they haven't posted anything.
+
+SELECT 
+	users.username,
+	posts.title
+FROM users
+	LEFT JOIN posts ON users.id = posts.user_id
