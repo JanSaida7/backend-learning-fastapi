@@ -68,6 +68,13 @@ Transitioned from storing data in memory to persistent storage using **PostgreSQ
   - **Read:** `SELECT * FROM` to view data.
   - **Update/Delete:** Modifying records based on conditions (`WHERE`).
 
+
+### Day 7: Relational Databases
+Learned how to link tables using **Foreign Keys**.
+- Created a One-to-Many relationship between `Users` and `Posts`.
+- Used **INNER JOIN** to fetch combined data (Users who posted).
+- Used **LEFT JOIN** to find users with no activity.
+
 ## 🏃 How to Run
 1. Clone the repo:
    ```bash
