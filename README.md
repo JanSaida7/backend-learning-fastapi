@@ -75,6 +75,13 @@ Learned how to link tables using **Foreign Keys**.
 - Used **INNER JOIN** to fetch combined data (Users who posted).
 - Used **LEFT JOIN** to find users with no activity.
 
+### Day 8: Advanced SQL (Aggregations)
+Learned how to summarize data to generate insights/reports.
+- **`COUNT()`:** To count total records.
+- **`GROUP BY`:** To bucket data (e.g., Posts per User).
+- **`ORDER BY` & `LIMIT`:** To create ranked lists (Leaderboards).
+
+
 ## 🏃 How to Run
 1. Clone the repo:
    ```bash
