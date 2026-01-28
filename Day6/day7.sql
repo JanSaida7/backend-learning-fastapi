@@ -11,3 +11,15 @@ CREATE TABLE posts {
   user_id INTEGER REFERENCES user(id) ON DELETE CASCADE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 };
+
+-- 2. Insert Posts linked to Users
+-- Assuming User ID 1 is 'alice' and User ID 2 is 'bob'
+
+INSERT INTO posts (title, content, user_id)
+VALUES ('Hello World', 'This is my First post!', 1);
+
+INSERT INTO posts (title, content, user_id) 
+VALUES ('FastAPI is cool', 'I am learning backend dev.', 1);
+
+INSERT INTO posts (title, content, user_id) 
+VALUES ('SQL is hard', 'But I am getting better at it.', 2);
