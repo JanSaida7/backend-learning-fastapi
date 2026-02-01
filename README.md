@@ -16,8 +16,11 @@ I am following a structured roadmap to move from Python Basics to deploying a fu
 - [x] **Day 1:** Environment Setup & Type Hinting
 - [x] **Day 2:** Modules, Imports & Entry Points
 - [x] **Day 3:** OOP Mastery (Bank System Logic)
-- [ ] **Day 4:** Decorators & Functional Patterns
-- [ ] **Day 5:** JSON, Requests & API Basics
+- [x] **Day 4:** Decorators & Functional Patterns
+- [x] **Day 5:** JSON, Requests & API Basics
+- [x] **Day 6:** Database Setup & Basic SQL
+- [x] **Day 7:** Relational Databases & Joins
+- [x] **Day 8:** Advanced SQL (Aggregations & Reporting)
 - [ ] **Week 1 Project:** CLI Weather App
 - [ ] **Week 2:** Database Design (PostgreSQL)
 
