@@ -24,12 +24,6 @@ def get_db_connection():
         print(f"❌ Connection Failed: {e}")
         return None
     
-if __name__ == "__main__":
-    connection = get_db_connection()
-    if connection:
-        print("✅ Successfully connected to PostgreSQL!")
-        connection.close() # Always close the line when done
-
 # ... imports and get_db_connection ...
 
 def get_all_users():
@@ -44,6 +38,12 @@ def get_all_users():
     # Fetch results
     users = cur.fetchall()
 
+    if not users:
+        print("No users found.")
+        cur.close()
+        conn.close()
+        return
+
     print("\n--- SYSTEM USERS ---")
     for user in users:
         # user is a tuple: (1, 'alice', 'alice@email.com')
@@ -54,5 +54,4 @@ def get_all_users():
     conn.close()
 
 if __name__ == "__main__":
-    # connection check removed to keep it clean
     get_all_users()
