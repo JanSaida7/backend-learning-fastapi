@@ -29,3 +29,30 @@ if __name__ == "__main__":
     if connection:
         print("✅ Successfully connected to PostgreSQL!")
         connection.close() # Always close the line when done
+
+# ... imports and get_db_connection ...
+
+def get_all_users():
+    conn = get_db_connection()
+    if not conn:
+        return 
+    # The "Cursor" is like your mouse pointer in the DB
+    cur = conn.cursor()
+
+    cur.execute("SELECT id, username, email FROM users;")
+
+    # Fetch results
+    users = cur.fetchall()
+
+    print("\n--- SYSTEM USERS ---")
+    for user in users:
+        # user is a tuple: (1, 'alice', 'alice@email.com')
+        print(f"ID: {user[0]} | Name: {user[1]} | Email: {user[2]}")
+
+
+    cur.close()
+    conn.close()
+
+if __name__ == "__main__":
+    # connection check removed to keep it clean
+    get_all_users()
