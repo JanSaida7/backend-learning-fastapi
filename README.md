@@ -84,6 +84,12 @@ Learned how to summarize data to generate insights/reports.
 - **`GROUP BY`:** To bucket data (e.g., Posts per User).
 - **`ORDER BY` & `LIMIT`:** To create ranked lists (Leaderboards).
 
+### Day 9: Connecting Python to Database
+Bridged the gap between code and data using `psycopg2`.
+- Configured **Environment Variables** (`.env`) to secure credentials.
+- Wrote Python functions to **Connect**, **Select**, and **Insert** data.
+- Learned about `cursors` and `commits` to manage database transactions.
+
 
 ## 🏃 How to Run
 1. Clone the repo:
