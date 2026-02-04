@@ -53,5 +53,39 @@ def get_all_users():
     cur.close()
     conn.close()
 
+# if __name__ == "__main__":
+#     get_all_users()
+
+
+def create_user(username: str, email: str):
+    conn = get_db_connection()
+    if not conn:
+        return
+    
+    cur = conn.cursor()
+
+    try:
+        # parameterized queries (%s) prevent SQL Injection hacks!
+        query = "INSERT INTO users (username, email) VALUES (%s, %s);"
+        cur.execute(query, (username, email))
+
+        conn.commit() # IMPORTANT: Save the changes!
+        print(f"✅ User '{username}' created successfully.")
+
+    except Exception as e:
+        print(f"❌ Error creating user: {e}")
+    finally:
+        cur.close()
+        conn.close()
+
 if __name__ == "__main__":
+    # get_all_users() <-- Comment this out for now
+
+    print("---REGISTER NEW USER---")
+    u_name = input("Enter Username: ")
+    u_email = input("Enter Email: ")
+
+    create_user(u_name, u_email)
+
+    # Verify it worked
     get_all_users()
