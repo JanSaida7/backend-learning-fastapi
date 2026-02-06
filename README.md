@@ -90,6 +90,12 @@ Bridged the gap between code and data using `psycopg2`.
 - Wrote Python functions to **Connect**, **Select**, and **Insert** data.
 - Learned about `cursors` and `commits` to manage database transactions.
 
+### Day 10: The Repository Pattern
+Refactored the application to separate concerns (Clean Architecture).
+- **`database.py`**: Handles low-level connection logic.
+- **`user_repository.py`**: Encapsulates all SQL queries.
+- **`main.py`**: Handles user input and display logic (No SQL allowed).
+
 
 ## 🏃 How to Run
 1. Clone the repo:
