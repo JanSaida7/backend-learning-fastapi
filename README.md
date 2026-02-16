@@ -96,6 +96,13 @@ Refactored the application to separate concerns (Clean Architecture).
 - **`user_repository.py`**: Encapsulates all SQL queries.
 - **`main.py`**: Handles user input and display logic (No SQL allowed).
 
+### Day 11: FastAPI Basics
+Started Week 3 by building a web server.
+- **Resources:** [FastAPI First Steps](https://fastapi.tiangolo.com/tutorial/first-steps/)
+- **Code:** Created `main.py` with `@app.get("/")`.
+- **Concept:** Learned **Path Parameters** (`/items/{id}`) to handle dynamic URLs.
+- **Tool:** Explored the auto-generated **Swagger UI** at `/docs`.
+
 
 ## 🏃 How to Run
 1. Clone the repo:
